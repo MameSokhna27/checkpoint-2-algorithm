@@ -1,0 +1,17 @@
+ALGORITHM tri_insertion
+VAR
+    i, j : INTEGER
+    nb : INTEGER
+BEGIN
+    n := length(arr)
+    FOR i FROM 1 TO length(arr) - 1 DO
+        nb := arr[i]             
+        j := i - 1                
+        WHILE j >= 0 AND arr[j] > nb DO
+            arr[j + 1] := arr[j]  
+            j := j - 1            
+        END_WHILE
+
+        arr[j + 1] := nb
+    END_FOR
+END
